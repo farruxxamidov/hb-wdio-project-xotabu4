@@ -1,27 +1,31 @@
+import { APP } from "../page/application"
+
 describe('User', function () {
     it('can register', function () {
-        browser.url('/create_account')
-
-        const registrationForm = $('#box-create-account')
-
-        registrationForm.$('input[name="firstname"]').setValue('Test')
-        registrationForm.$('input[name="lastname"]').setValue('Test')
-        const countrySelect = registrationForm.$('select[name="country_code"]')
-        countrySelect.selectByVisibleText('Ukraine')
+        console.time('Test "can register" took')
         
+        APP.CreateAccount.open();
         const email = `test${new Date().getTime() / 1000}@test.com`
+        APP.CreateAccount.fillWith({
+            firstname: 'Test',
+            lastname: 'Test',
+            countryName: 'Ukraine',
+            email: email,
+            phone: '+380441111111',
+            password: email,
+            confirmPassword: email
+        })
+        APP.CreateAccount.confirmRegistration()
+        // browser.pause(5000)
+        // browser.waitUntil(() => {
+        //     return alert.isDisplayed() && alert.getText().includes(expectedText)
+        // }, { timeoutMsg: 'Expected success alert to be visible and have correct text' })
+        expect(APP.Home.successAlert).toBeDisplayed()
+        expect(APP.Home.successAlert).toHaveTextContaining('Your customer account has been created.')
+        console.timeEnd('Test "can register" took')
 
-        registrationForm.$('input[name="email"]').setValue(email)
-        registrationForm.$('input[name="phone"]').setValue('+380441111111')
-        
-        registrationForm.$('input[name="password"]').setValue(email)
-        registrationForm.$('input[name="confirmed_password"]').setValue(email)
-
-        registrationForm.$('button[name="create_account"]').click()
-
-        browser.pause(5000)
-        const alert = $('#notices .alert-success')
-        const expectedText = 'Your customer account has been created.'
-        expect(alert).toHaveTextContaining(expectedText)
+        // Test "can register" took: 7603.411ms
+        // Test "can register" took: 2514.112ms
+        // Test "can register" took: 2814.565ms
     })
 })
