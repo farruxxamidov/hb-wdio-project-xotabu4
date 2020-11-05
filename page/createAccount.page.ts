@@ -11,6 +11,8 @@ export class CreateAccountPO {
         this.registrationForm.$('input[name="lastname"]').setValue(options.lastname)
         const countrySelect = this.registrationForm.$('select[name="country_code"]')
         countrySelect.selectByVisibleText(options.countryName)
+        this.registrationForm.$('input[name="email"]').click()
+        browser.pause(50)
         this.registrationForm.$('input[name="email"]').setValue(options.email)
         this.registrationForm.$('input[name="phone"]').setValue(options.phone)
 
