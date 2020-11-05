@@ -5,7 +5,7 @@ name: WDIO Tests
 on: 
   push:
     branches-ignore:
-    - '!master' # Push events to branches matching allure-report
+    - '!main' # Push events to branches matching allure-report
     paths-ignore:
     - 'docs/**'
 
@@ -31,7 +31,7 @@ jobs:
         name: allure-report
         path: ./allure-report
     - name: Deploy report
-      uses: JamesIves/github-pages-deploy-action@3.1.0
+      uses: JamesIves/github-pages-deploy-action@3.7.1
       if: always()
       with:
         ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
