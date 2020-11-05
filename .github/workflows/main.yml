@@ -34,7 +34,7 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@3.7.1
       if: always()
       with:
-        ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ACCESS_TOKEN: ${{ secrets.ACCESS_KEY_HB_REPO }}
         BRANCH: main # The branch the action should deploy to.
         FOLDER: allure-report # The folder the action should deploy.
         TARGET_FOLDER: docs
