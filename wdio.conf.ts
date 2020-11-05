@@ -4,7 +4,8 @@ import { Config } from "@wdio/sync";
 export const config: Config = {
     runner: 'local',
     specs: [
-        './test/**/*.ts'
+        //'./test/**/*.ts'
+        './test/mocha.ts'
     ],
     hostname: process.env.SELENIUM_HUB_HOST ?? 'localhost',
     path: '/wd/hub',
@@ -22,6 +23,8 @@ export const config: Config = {
     reporters: ['spec'],
     mochaOpts: {
         ui: 'bdd',
-        timeout: 60000
+        timeout: 60000,
+        // retries: 3,
+        // grep: '@SMOKE'
     }
 }
