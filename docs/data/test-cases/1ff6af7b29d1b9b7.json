@@ -1,12 +1,12 @@
 {
-  "uid" : "ed73980e1b104f13",
+  "uid" : "1ff6af7b29d1b9b7",
   "name" : "can register",
   "fullName" : "User.can register",
   "historyId" : "1d0c57503072fd6a1de1d43232c5d5d7",
   "time" : {
-    "start" : 1604608994746,
-    "stop" : 1604608998187,
-    "duration" : 3441
+    "start" : 1604609188525,
+    "stop" : 1604609192047,
+    "duration" : 3522
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -51,8 +51,27 @@
     "severity" : "normal",
     "retries" : [ ],
     "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "ed73980e1b104f13",
+        "status" : "passed",
+        "time" : {
+          "start" : 1604608994746,
+          "stop" : 1604608998187,
+          "duration" : 3441
+        }
+      } ]
+    },
     "tags" : [ ]
   },
-  "source" : "ed73980e1b104f13.json",
+  "source" : "1ff6af7b29d1b9b7.json",
   "parameterValues" : [ "chrome-86.0.4240.75" ]
 }
