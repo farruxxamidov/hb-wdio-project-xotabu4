@@ -25,5 +25,24 @@
         "duration" : 3441
       }
     } ]
+  },
+  "b8a50b80043fb4ab6466405f6a368782" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "1127a2eaa714d5c1",
+      "status" : "passed",
+      "time" : {
+        "start" : 1604651438127,
+        "stop" : 1604651455309,
+        "duration" : 17182
+      }
+    } ]
   }
 }

@@ -3,14 +3,14 @@
   "children" : [ {
     "name" : "User",
     "children" : [ {
-      "name" : "can register",
-      "uid" : "1ff6af7b29d1b9b7",
+      "name" : "fill registration form",
+      "uid" : "1127a2eaa714d5c1",
       "parentUid" : "158d31ef2d958db1dcda80c268f86ba1",
       "status" : "passed",
       "time" : {
-        "start" : 1604609188525,
-        "stop" : 1604609192047,
-        "duration" : 3522
+        "start" : 1604651438127,
+        "stop" : 1604651455309,
+        "duration" : 17182
       },
       "flaky" : false,
       "newFailed" : false,

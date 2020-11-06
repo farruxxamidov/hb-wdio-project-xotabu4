@@ -1,2 +1,2 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Thu Nov 05 20:46:28 UTC 2020","Thu Nov 05 20:46:32 UTC 2020","3522","","User","","User","can register","can register",""
+"passed","Fri Nov 06 08:30:38 UTC 2020","Fri Nov 06 08:30:55 UTC 2020","17182","","User","","User","fill registration form","fill registration form",""
