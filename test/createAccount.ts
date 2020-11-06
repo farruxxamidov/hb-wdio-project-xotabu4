@@ -1,4 +1,5 @@
 import { APP } from "../page/application"
+import { createNewUserAndLogin } from "../utils/createUser";
 
 describe('User', function () {
     it('can register', function () {
@@ -27,5 +28,29 @@ describe('User', function () {
         // Test "can register" took: 7603.411ms
         // Test "can register" took: 2514.112ms
         // Test "can register" took: 2814.565ms
+    })
+    it('register user thru HTTP', function () {
+        const user = createNewUserAndLogin()
+
+        browser.pause(30000)
+    })
+    it.only('fill registration form', function () {
+        browser.url('/create_account')
+        console.time('JS registration')
+        browser.execute(function () {
+            document.querySelector('input[name="firstname"]')['value'] = "TestFirstName";
+            document.querySelector('input[name="lastname"]')['value'] = "TestLastName";
+            document.querySelector('select[name="country_code"]')['value'] = "UA";
+            document.querySelector('[name="customer_form"] input[name="email"]')['click']();
+            const email = `test${new Date().getTime() / 1000}@test.com`
+            document.querySelector('[name="customer_form"] input[name="email"]')['value'] = email;
+            document.querySelector('input[name="phone"]')['value'] = "+380441112233";
+            document.querySelector('[name="customer_form"] input[name="password"]')['value'] = "123456";
+            document.querySelector('input[name="confirmed_password"]')['value'] = "123456";
+            document.querySelector('button[name="create_account"]')['click']();
+        })
+        console.timeEnd('JS registration')
+        browser.pause(15000)
+        // 1 passing (17.6s) 2.6 s without sleep
     })
 })

@@ -19,5 +19,6 @@ async function print3Files() {
         console.log(err);
         throw err
     }
+    return 'TEST'
 }
 print3Files();

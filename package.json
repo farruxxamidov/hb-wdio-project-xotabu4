@@ -32,6 +32,10 @@
     "ts-node": "^9.0.0",
     "typescript": "^4.0.5",
     "allure-commandline": "^2.13.0",
-    "tough-cookie": "^4.0.0"
+    "tough-cookie": "^4.0.0",
+    "request": "^2.88.2",
+    "request-promise-native": "^1.0.9",
+    "faker": "5.1.0",
+    "cheerio": "1.0.0-rc.3"
   }
 }
