@@ -1,10 +1,10 @@
 [ {
-  "uid" : "1127a2eaa714d5c1",
-  "name" : "fill registration form",
+  "uid" : "6dfeae933d6e9d5f",
+  "name" : "custom commands",
   "time" : {
-    "start" : 1604651438127,
-    "stop" : 1604651455309,
-    "duration" : 17182
+    "start" : 1604653252456,
+    "stop" : 1604653256335,
+    "duration" : 3879
   },
   "status" : "passed",
   "severity" : "normal"
