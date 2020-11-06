@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "wdio ./entrypoint.conf.js",
+    "repl": "wdio repl chrome",
     "report": "allure generate"
   },
   "repository": {

@@ -4,7 +4,7 @@ import { createNewUserAndLogin } from "../utils/createUser";
 describe('User', function () {
     it('can register', function () {
         console.time('Test "can register" took')
-        
+
         APP.CreateAccount.open();
         const email = `test${new Date().getTime() / 1000}@test.com`
         APP.CreateAccount.fillWith({
@@ -34,8 +34,9 @@ describe('User', function () {
 
         browser.pause(30000)
     })
-    it.only('fill registration form', function () {
+    it('fill registration form', function () {
         browser.url('/create_account')
+        browser.pause(15000)
         console.time('JS registration')
         browser.execute(function () {
             document.querySelector('input[name="firstname"]')['value'] = "TestFirstName";
@@ -52,5 +53,34 @@ describe('User', function () {
         console.timeEnd('JS registration')
         browser.pause(15000)
         // 1 passing (17.6s) 2.6 s without sleep
+    })
+
+    it.only('custom commands', function () {
+        browser.addCommand("waitAndClick", function () {
+            // `this` is return value of $(selector)
+            this.waitForDisplayed()
+            this.click()
+        }, true)
+
+        // $('div').waitAndClick()
+
+        browser.overwriteCommand('click', function (clickOrig) {
+            browser.pause(50)
+            console.log(`### doing click`)
+            clickOrig()
+        }, true)
+
+        APP.CreateAccount.open();
+        const email = `test${new Date().getTime() / 1000}@test.com`
+        APP.CreateAccount.fillWith({
+            firstname: 'Test',
+            lastname: 'Test',
+            countryName: 'Ukraine',
+            email: email,
+            phone: '+380441111111',
+            password: email,
+            confirmPassword: email
+        })
+        APP.CreateAccount.confirmRegistration()
     })
 })
